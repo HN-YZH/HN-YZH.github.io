@@ -70,7 +70,7 @@ sudo apt install openssh-server
  **/
 sudo vim /etc/ssh/sshd_config
 </code></pre>
-<h3 id="3、使用su和-su-切换用户的区别"><a href="#3、使用su和-su-切换用户的区别" class="headerlink" title="3、使用su和*su -*切换用户的区别"></a>3、使用<em>su</em>和*su -*切换用户的区别</h3><p>可以简单理解为 <em>su -</em> 切换用户相较于 <em>su</em> 切换用户更为彻底，<em>su</em>切换用户只是切换部分例如使用 <em>su</em> 切换到 <em>root</em> 用户环境变量中的用户依旧是切换前的用户，而与之相较而言 <em>su -</em> 切换用户更为彻底。</p>
+<h3 id="3、使用su和-su-切换用户的区别"><a href="#3、使用su和-su-切换用户的区别" class="headerlink" title="3、使用su和 su - 切换用户的区别"></a>3、使用<em>su</em>和 <em>su -</em> 切换用户的区别</h3><p>可以简单理解为 <em>su -</em> 切换用户相较于 <em>su</em> 切换用户更为彻底，<em>su</em>切换用户只是切换部分例如使用 <em>su</em> 切换到 <em>root</em> 用户环境变量中的用户依旧是切换前的用户，而与之相较而言 <em>su -</em> 切换用户更为彻底。</p>
 ]]></content>
       <categories>
         <category>Linux</category>
