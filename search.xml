@@ -1,6 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git基础</title>
+    <url>/2022/10/26/Git%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="Git基础"><a href="#Git基础" class="headerlink" title="Git基础"></a><strong>Git基础</strong></h2><h3 id="1、创建版本库（仓库）"><a href="#1、创建版本库（仓库）" class="headerlink" title="1、创建版本库（仓库）"></a>1、创建版本库（仓库）</h3><pre><code>mkdir Repository
+</code></pre>
+<h3 id="2、初始化"><a href="#2、初始化" class="headerlink" title="2、初始化"></a>2、初始化</h3><pre><code>git init
+</code></pre>
+<h3 id="3、添加文件到仓库"><a href="#3、添加文件到仓库" class="headerlink" title="3、添加文件到仓库"></a>3、添加文件到仓库</h3><pre><code>git add 文件
+</code></pre>
+<h3 id="4、提交文件到仓库（版本库）-m-后是提交说明，方便管理"><a href="#4、提交文件到仓库（版本库）-m-后是提交说明，方便管理" class="headerlink" title="4、提交文件到仓库（版本库） -m 后是提交说明，方便管理"></a>4、提交文件到仓库（版本库） -m 后是提交说明，方便管理</h3><pre><code>git commit -m &quot;&quot;
+</code></pre>
+<h3 id="5、Git版本库（仓库）状态"><a href="#5、Git版本库（仓库）状态" class="headerlink" title="5、Git版本库（仓库）状态"></a>5、Git版本库（仓库）状态</h3><pre><code>git status
+</code></pre>
+<h3 id="6、查看改动内容"><a href="#6、查看改动内容" class="headerlink" title="6、查看改动内容"></a>6、查看改动内容</h3><pre><code>git diff
+</code></pre>
+<h3 id="7、查看提交时间线（日志）-–pretty-x3D-oneline-显示格式，一行显示"><a href="#7、查看提交时间线（日志）-–pretty-x3D-oneline-显示格式，一行显示" class="headerlink" title="7、查看提交时间线（日志） –pretty&#x3D;oneline 显示格式，一行显示"></a>7、查看提交时间线（日志） –pretty&#x3D;oneline 显示格式，一行显示</h3><pre><code>git log --pretty=oneline
+</code></pre>
+<h3 id="8、查看命令历史"><a href="#8、查看命令历史" class="headerlink" title="8、查看命令历史"></a>8、查看命令历史</h3><pre><code>git reflog
+</code></pre>
+<h3 id="9、回退上一版本"><a href="#9、回退上一版本" class="headerlink" title="9、回退上一版本"></a>9、回退上一版本</h3><pre><code>git reset --hard head^
+</code></pre>
+<h3 id="10、恢复到指定版本"><a href="#10、恢复到指定版本" class="headerlink" title="10、恢复到指定版本"></a>10、恢复到指定版本</h3><pre><code>git reset --hard 版本号
+</code></pre>
+<h3 id="11、查看版本库中最新版本和工作区中文件的区别"><a href="#11、查看版本库中最新版本和工作区中文件的区别" class="headerlink" title="11、查看版本库中最新版本和工作区中文件的区别"></a>11、查看版本库中最新版本和工作区中文件的区别</h3><pre><code>git diff head -- 文件
+</code></pre>
+<h3 id="12、Git暂存区（stage-index）和工作区（Working-Directory）"><a href="#12、Git暂存区（stage-index）和工作区（Working-Directory）" class="headerlink" title="12、Git暂存区（stage|index）和工作区（Working Directory）"></a>12、Git暂存区（stage|index）和工作区（Working Directory）</h3><p><em>.git</em>是Git的版本库其中包含暂存区（stage|index) 和初始化时自动创建的master分支 ，master 分支中 包含 指针head；<br><em><strong>git add</strong></em>添加文件到暂存区；<br><em><strong>git commit</strong></em>提交暂存区文件到Git版本库分支；<br>未添加到暂存区的文件无法提交到版本库分支之中，可以使用<em><strong>git diff head – 文件</strong></em>查看版本库最新版本文件和工作区中文件的区别。</p>
+<h3 id="13、撤销工作区文件修改"><a href="#13、撤销工作区文件修改" class="headerlink" title="13、撤销工作区文件修改"></a>13、撤销工作区文件修改</h3><pre><code>git checkout -- 文件
+</code></pre>
+<h3 id="14、撤销添加到暂存区的文件到工作区同时撤销文件修改"><a href="#14、撤销添加到暂存区的文件到工作区同时撤销文件修改" class="headerlink" title="14、撤销添加到暂存区的文件到工作区同时撤销文件修改"></a>14、撤销添加到暂存区的文件到工作区同时撤销文件修改</h3><h4 id="14-1-撤销暂存区文件到工作区"><a href="#14-1-撤销暂存区文件到工作区" class="headerlink" title="14.1 撤销暂存区文件到工作区"></a>14.1 撤销暂存区文件到工作区</h4><pre><code>git reset head 文件
+</code></pre>
+<h4 id="14-2-撤销工作区文件修改"><a href="#14-2-撤销工作区文件修改" class="headerlink" title="14.2 撤销工作区文件修改"></a>14.2 撤销工作区文件修改</h4><pre><code>git checkout -- 文件
+</code></pre>
+<h3 id="15、删除版本库中的文件"><a href="#15、删除版本库中的文件" class="headerlink" title="15、删除版本库中的文件"></a>15、删除版本库中的文件</h3><pre><code>git rm 文件
+</code></pre>
+<h3 id="16、恢复误删除文件，从版本库中替换工作区文件-（前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）"><a href="#16、恢复误删除文件，从版本库中替换工作区文件-（前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）" class="headerlink" title="16、恢复误删除文件，从版本库中替换工作区文件 （前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）"></a>16、恢复误删除文件，从版本库中替换工作区文件 （前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）</h3><pre><code>git checkout -- 文件
+</code></pre>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu基础</title>
+    <url>/2022/10/26/Ubuntu%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="WSL环境下Linux子系统Ubuntu基础"><a href="#WSL环境下Linux子系统Ubuntu基础" class="headerlink" title="WSL环境下Linux子系统Ubuntu基础"></a><strong>WSL环境下Linux子系统Ubuntu基础</strong></h2><h3 id="1、Ubuntu中查看IP信息"><a href="#1、Ubuntu中查看IP信息" class="headerlink" title="1、Ubuntu中查看IP信息"></a>1、Ubuntu中查看IP信息</h3><h4 id="1-1-查询IP信息"><a href="#1-1-查询IP信息" class="headerlink" title="1.1 查询IP信息"></a>1.1 查询IP信息</h4><pre><code>ip addr show
+</code></pre>
+<h4 id="1-2-效果等同于ip-addr-show"><a href="#1-2-效果等同于ip-addr-show" class="headerlink" title="1.2 效果等同于ip addr show"></a>1.2 效果等同于<em>ip addr show</em></h4><pre><code>ip a
+</code></pre>
+<h4 id="1-3-显示较少的IP信息"><a href="#1-3-显示较少的IP信息" class="headerlink" title="1.3 显示较少的IP信息"></a>1.3 显示较少的IP信息</h4><pre><code>hostname -I
+</code></pre>
+<h3 id="2、ssh远程连接错误"><a href="#2、ssh远程连接错误" class="headerlink" title="2、ssh远程连接错误"></a>2、ssh远程连接错误</h3><pre><code>//查看ssh服务状态
+sudo service ssh status
+//启动ssh服务
+sudo service ssh start
+//安装ssh
+//更新系统包
+sudo apt update
+sudo apt upgrade
+//安装ssh服务
+sudo apt remove openssh-server
+sudo apt install openssh-server
+/**修改配置文件，主要修改两点：
+  1：取消Port 22 的注释
+  2：修改PasswordAuthentication yes ，将 no 修改为 yes
+ **/
+sudo vim /etc/ssh/sshd_config
+</code></pre>
+<h3 id="3、使用su和-su-切换用户的区别"><a href="#3、使用su和-su-切换用户的区别" class="headerlink" title="3、使用su和*su - *切换用户的区别"></a>3、使用<em>su</em>和*su - *切换用户的区别</h3><p>可以简单理解为 <em>su -</em> 切换用户相较于 <em>su</em> 切换用户更为彻底，<em>su</em>切换用户只是切换部分例如使用 <em>su</em> 切换到 <em>root</em> 用户环境变量中的用户依旧是切换前的用户，而与之相较而言 <em>su -</em> 切换用户更为彻底。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>WSL</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>windwos子系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu部署hexo</title>
+    <url>/2022/10/26/Ubuntu%E9%83%A8%E7%BD%B2hexo/</url>
+    <content><![CDATA[<h2 id="Ubuntu安装hexo"><a href="#Ubuntu安装hexo" class="headerlink" title="Ubuntu安装hexo"></a><strong>Ubuntu安装hexo</strong></h2><h3 id="1、从NodeSource安装node-js"><a href="#1、从NodeSource安装node-js" class="headerlink" title="1、从NodeSource安装node.js"></a>1、从NodeSource安装node.js</h3><h4 id="1-1-下载并执行NodeSource脚本"><a href="#1-1-下载并执行NodeSource脚本" class="headerlink" title="1.1 下载并执行NodeSource脚本"></a>1.1 下载并执行NodeSource脚本</h4><pre><code>curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+</code></pre>
+<h4 id="1-2-安装node-js和npm"><a href="#1-2-安装node-js和npm" class="headerlink" title="1.2 安装node.js和npm"></a>1.2 安装node.js和npm</h4><pre><code>sudo apt install nodejs
+</code></pre>
+<h4 id="1-3-验证安装"><a href="#1-3-验证安装" class="headerlink" title="1.3 验证安装"></a>1.3 验证安装</h4><pre><code>node --version
+npm --version
+</code></pre>
+<h3 id="2、部署hexo"><a href="#2、部署hexo" class="headerlink" title="2、部署hexo"></a>2、部署hexo</h3><h4 id="2-1-下载hexo"><a href="#2-1-下载hexo" class="headerlink" title="2.1 下载hexo"></a>2.1 下载hexo</h4><pre><code>sudo npm install hexo-cli -g
+</code></pre>
+<h4 id="2-2-初始化"><a href="#2-2-初始化" class="headerlink" title="2.2 初始化"></a>2.2 初始化</h4><pre><code>hexo init
+</code></pre>
+<h4 id="2-3-安装其它可能需要的组件"><a href="#2-3-安装其它可能需要的组件" class="headerlink" title="2.3 安装其它可能需要的组件"></a>2.3 安装其它可能需要的组件</h4><pre><code>npm install
+</code></pre>
+<h3 id="2、Git配置"><a href="#2、Git配置" class="headerlink" title="2、Git配置"></a>2、Git配置</h3><h4 id="2-1-配置user-name和user-email"><a href="#2-1-配置user-name和user-email" class="headerlink" title="2.1 配置user.name和user.email"></a>2.1 配置user.name和user.email</h4><pre><code>git config --global user.name &quot;HN-YZH&quot;  
+git config --global user.emal &quot;*176*****693@163.com&quot;
+</code></pre>
+<h4 id="2-2-生成ssh公钥和私钥"><a href="#2-2-生成ssh公钥和私钥" class="headerlink" title="2.2 生成ssh公钥和私钥"></a>2.2 生成ssh公钥和私钥</h4><pre><code>ssh -keygen -t rsa -C &quot;176*****693@163.com&quot;
+</code></pre>
+<h4 id="2-3-查看生成的公钥"><a href="#2-3-查看生成的公钥" class="headerlink" title="2.3 查看生成的公钥"></a>2.3 查看生成的公钥</h4><pre><code>cd ~/.ssh 
+ls 
+cat id_rsa.pub
+</code></pre>
+<h4 id="2-4-验证Git"><a href="#2-4-验证Git" class="headerlink" title="2.4 验证Git"></a>2.4 验证Git</h4><pre><code> ssh -T git@GitHub.com 
+</code></pre>
+<h3 id="3、hexo关联Git"><a href="#3、hexo关联Git" class="headerlink" title="3、hexo关联Git"></a>3、hexo关联Git</h3><h4 id="3-1-安装hexo-deployer-git组件"><a href="#3-1-安装hexo-deployer-git组件" class="headerlink" title="3.1 安装hexo-deployer-git组件"></a>3.1 安装hexo-deployer-git组件</h4><pre><code>npm install --save hexo-deployer-git
+</code></pre>
+<h4 id="3-2-修改hexo根目录下的-config-yml"><a href="#3-2-修改hexo根目录下的-config-yml" class="headerlink" title="3.2 修改hexo根目录下的_config.yml"></a>3.2 修改hexo根目录下的_config.yml</h4><pre><code>deploy:  
+  type: git  
+  repository: git@github.com:HN-YZH/HN-YZH.github.io.git    
+  branch: master
+</code></pre>
+<h3 id="4、hexo更换主题next"><a href="#4、hexo更换主题next" class="headerlink" title="4、hexo更换主题next"></a>4、hexo更换主题next</h3><h4 id="4-1-下载next主题"><a href="#4-1-下载next主题" class="headerlink" title="4.1 下载next主题"></a>4.1 下载next主题</h4><pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre>
+<h4 id="4-2-使用next主题"><a href="#4-2-使用next主题" class="headerlink" title="4.2 使用next主题"></a>4.2 使用next主题</h4><pre><code>//修改hexo _config.yml
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+## theme: landscape
+theme: next
+</code></pre>
+<h4 id="4-3-next-添加本地搜索-local-Search"><a href="#4-3-next-添加本地搜索-local-Search" class="headerlink" title="4.3 next 添加本地搜索 local Search"></a>4.3 next 添加本地搜索 local Search</h4><pre><code>//安装 hexo-generator-searchdb
+npm hexo-generator-searchdb --save
+//修改 hexo 配置文件_config.yml 新增以下内容
+# local search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+//修改 next 配置文件 _config.yml
+# Local search
+local_search:
+  enable: true
+</code></pre>
+<h3 id="5、首页文章显示简介"><a href="#5、首页文章显示简介" class="headerlink" title="5、首页文章显示简介"></a>5、首页文章显示简介</h3><pre><code>//修改 默认文章模板 /scaffolds/post.md
+title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
+tags:
+categories:
+description: 点击阅读前文前, 首页能看到的文章的简短描述
+</code></pre>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/10/24/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
