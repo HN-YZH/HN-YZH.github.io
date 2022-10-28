@@ -15,26 +15,52 @@
 </code></pre>
 <h3 id="6、查看改动内容"><a href="#6、查看改动内容" class="headerlink" title="6、查看改动内容"></a>6、查看改动内容</h3><pre><code>git diff
 </code></pre>
-<h3 id="7、查看提交时间线（日志）-–pretty-x3D-oneline-显示格式，一行显示"><a href="#7、查看提交时间线（日志）-–pretty-x3D-oneline-显示格式，一行显示" class="headerlink" title="7、查看提交时间线（日志） –pretty&#x3D;oneline 显示格式，一行显示"></a>7、查看提交时间线（日志） –pretty&#x3D;oneline 显示格式，一行显示</h3><pre><code>git log --pretty=oneline
+<h3 id="7、查看提交时间线（提交历史日志）-–pretty-x3D-oneline-显示格式，一行显示"><a href="#7、查看提交时间线（提交历史日志）-–pretty-x3D-oneline-显示格式，一行显示" class="headerlink" title="7、查看提交时间线（提交历史日志） –pretty&#x3D;oneline 显示格式，一行显示"></a>7、查看提交时间线（提交历史日志） –pretty&#x3D;oneline 显示格式，一行显示</h3><pre><code>git log --pretty=oneline
 </code></pre>
 <h3 id="8、查看命令历史"><a href="#8、查看命令历史" class="headerlink" title="8、查看命令历史"></a>8、查看命令历史</h3><pre><code>git reflog
 </code></pre>
-<h3 id="9、回退上一版本"><a href="#9、回退上一版本" class="headerlink" title="9、回退上一版本"></a>9、回退上一版本</h3><pre><code>git reset --hard head^
+<h3 id="9、回退上一版本"><a href="#9、回退上一版本" class="headerlink" title="9、回退上一版本"></a>9、回退上一版本</h3><pre><code>git reset --hard HEAD^
 </code></pre>
 <h3 id="10、恢复到指定版本"><a href="#10、恢复到指定版本" class="headerlink" title="10、恢复到指定版本"></a>10、恢复到指定版本</h3><pre><code>git reset --hard 版本号
 </code></pre>
-<h3 id="11、查看版本库中最新版本和工作区中文件的区别"><a href="#11、查看版本库中最新版本和工作区中文件的区别" class="headerlink" title="11、查看版本库中最新版本和工作区中文件的区别"></a>11、查看版本库中最新版本和工作区中文件的区别</h3><pre><code>git diff head -- 文件
+<h3 id="11、查看版本库中最新版本和工作区中文件的区别"><a href="#11、查看版本库中最新版本和工作区中文件的区别" class="headerlink" title="11、查看版本库中最新版本和工作区中文件的区别"></a>11、查看版本库中最新版本和工作区中文件的区别</h3><pre><code>git diff HEAD -- 文件
 </code></pre>
 <h3 id="12、Git暂存区（stage-index）和工作区（Working-Directory）"><a href="#12、Git暂存区（stage-index）和工作区（Working-Directory）" class="headerlink" title="12、Git暂存区（stage|index）和工作区（Working Directory）"></a>12、Git暂存区（stage|index）和工作区（Working Directory）</h3><p><em>.git</em>是Git的版本库其中包含暂存区（stage|index) 和初始化时自动创建的master分支 ，master 分支中 包含 指针head；<br><em><strong>git add</strong></em>添加文件到暂存区；<br><em><strong>git commit</strong></em>提交暂存区文件到Git版本库分支；<br>未添加到暂存区的文件无法提交到版本库分支之中，可以使用<em><strong>git diff head – 文件</strong></em>查看版本库最新版本文件和工作区中文件的区别。</p>
 <h3 id="13、撤销工作区文件修改"><a href="#13、撤销工作区文件修改" class="headerlink" title="13、撤销工作区文件修改"></a>13、撤销工作区文件修改</h3><pre><code>git checkout -- 文件
 </code></pre>
-<h3 id="14、撤销添加到暂存区的文件到工作区同时撤销文件修改"><a href="#14、撤销添加到暂存区的文件到工作区同时撤销文件修改" class="headerlink" title="14、撤销添加到暂存区的文件到工作区同时撤销文件修改"></a>14、撤销添加到暂存区的文件到工作区同时撤销文件修改</h3><h4 id="14-1-撤销暂存区文件到工作区"><a href="#14-1-撤销暂存区文件到工作区" class="headerlink" title="14.1 撤销暂存区文件到工作区"></a>14.1 撤销暂存区文件到工作区</h4><pre><code>git reset head 文件
+<h3 id="14、撤销添加到暂存区的文件到工作区同时撤销文件修改"><a href="#14、撤销添加到暂存区的文件到工作区同时撤销文件修改" class="headerlink" title="14、撤销添加到暂存区的文件到工作区同时撤销文件修改"></a>14、撤销添加到暂存区的文件到工作区同时撤销文件修改</h3><h4 id="14-1-撤销暂存区文件到工作区"><a href="#14-1-撤销暂存区文件到工作区" class="headerlink" title="14.1 撤销暂存区文件到工作区"></a>14.1 撤销暂存区文件到工作区</h4><pre><code>git reset HEAD 文件
 </code></pre>
 <h4 id="14-2-撤销工作区文件修改"><a href="#14-2-撤销工作区文件修改" class="headerlink" title="14.2 撤销工作区文件修改"></a>14.2 撤销工作区文件修改</h4><pre><code>git checkout -- 文件
 </code></pre>
 <h3 id="15、删除版本库中的文件"><a href="#15、删除版本库中的文件" class="headerlink" title="15、删除版本库中的文件"></a>15、删除版本库中的文件</h3><pre><code>git rm 文件
 </code></pre>
 <h3 id="16、恢复误删除文件，从版本库中替换工作区文件-（前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）"><a href="#16、恢复误删除文件，从版本库中替换工作区文件-（前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）" class="headerlink" title="16、恢复误删除文件，从版本库中替换工作区文件 （前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）"></a>16、恢复误删除文件，从版本库中替换工作区文件 （前提条件是版本库中的文件未删除，并且只能恢复版本库中最新版本文件）</h3><pre><code>git checkout -- 文件
+</code></pre>
+<h3 id="17、本地Git版本库关联GitHub远程库"><a href="#17、本地Git版本库关联GitHub远程库" class="headerlink" title="17、本地Git版本库关联GitHub远程库"></a>17、本地Git版本库关联GitHub远程库</h3><pre><code>git remote add origin git@github.com:GitHubName/gitDirectory
+</code></pre>
+<h3 id="18、首次推送本地版本库到远程库-u是为了关联本地master分支和远程库中的master分支，简化之后推送和拉取命令"><a href="#18、首次推送本地版本库到远程库-u是为了关联本地master分支和远程库中的master分支，简化之后推送和拉取命令" class="headerlink" title="18、首次推送本地版本库到远程库(-u是为了关联本地master分支和远程库中的master分支，简化之后推送和拉取命令)"></a>18、首次推送本地版本库到远程库(-u是为了关联本地master分支和远程库中的master分支，简化之后推送和拉取命令)</h3><pre><code>git push -u origin master
+</code></pre>
+<h3 id="19、推送本地库修改到远程库"><a href="#19、推送本地库修改到远程库" class="headerlink" title="19、推送本地库修改到远程库"></a>19、推送本地库修改到远程库</h3><pre><code>git push origin master
+</code></pre>
+<h3 id="20、查看远程库状态"><a href="#20、查看远程库状态" class="headerlink" title="20、查看远程库状态"></a>20、查看远程库状态</h3><pre><code>git temote -v
+</code></pre>
+<h3 id="21、删除远程库（解除本地仓库和远程库的关联）"><a href="#21、删除远程库（解除本地仓库和远程库的关联）" class="headerlink" title="21、删除远程库（解除本地仓库和远程库的关联）"></a>21、删除远程库（解除本地仓库和远程库的关联）</h3><pre><code>git temote rm orgin
+</code></pre>
+<h3 id="22、创建并切换分支"><a href="#22、创建并切换分支" class="headerlink" title="22、创建并切换分支"></a>22、创建并切换分支</h3><pre><code>//1.创建分支dev
+git branch dev
+//2.切换分支到dev
+git checkout dev
+</code></pre>
+<p>   &#x2F;&#x2F;上面的两个步骤可以合并为一个<br>    git checkout -b dev</p>
+<h3 id="23、查看当前分支"><a href="#23、查看当前分支" class="headerlink" title="23、查看当前分支"></a>23、查看当前分支</h3><pre><code>git branch
+</code></pre>
+<h3 id="24、合并指定分支到当前分支"><a href="#24、合并指定分支到当前分支" class="headerlink" title="24、合并指定分支到当前分支"></a>24、合并指定分支到当前分支</h3><pre><code>/*和并分支dev到master*/
+//1.切换分支到master
+git checkout master
+//2.合并dev到master
+git merge dev
+</code></pre>
+<h3 id="25、删除分支dev"><a href="#25、删除分支dev" class="headerlink" title="25、删除分支dev"></a>25、删除分支dev</h3><pre><code>git branch -d dev
 </code></pre>
 ]]></content>
       <categories>
@@ -145,6 +171,15 @@ tags:
 categories:
 description: 点击阅读前文前, 首页能看到的文章的简短描述
 </code></pre>
+<h3 id="6、菜单图标和数量的气泡显示"><a href="#6、菜单图标和数量的气泡显示" class="headerlink" title="6、菜单图标和数量的气泡显示"></a>6、菜单图标和数量的气泡显示</h3><pre><code># Enable / Disable menu icons / item badges.
+menu_settings:
+icons: true
+badges: true
+</code></pre>
+<h3 id="7、设置代码高光显示"><a href="#7、设置代码高光显示" class="headerlink" title="7、设置代码高光显示"></a>7、设置代码高光显示</h3><pre><code>theme:
+  light: vs2015
+  dark: vs2015
+</code></pre>
 ]]></content>
       <categories>
         <category>hexo</category>
@@ -152,23 +187,5 @@ description: 点击阅读前文前, 首页能看到的文章的简短描述
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/10/24/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
