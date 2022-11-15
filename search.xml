@@ -228,4 +228,44 @@ badges: true
         <tag>Oracle数据库常见报错</tag>
       </tags>
   </entry>
+  <entry>
+    <title>资源下载链接整合</title>
+    <url>/2022/11/15/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%E6%95%B4%E5%90%88/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="left">资源名</th>
+<th align="left">下载地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01</td>
+<td align="left">Oracle_11g</td>
+<td align="left"><a href="http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_1of2.zip">http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_1of2.zip</a><br/><a href="http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_2of2.zip">http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_2of2.zip</a></td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="left">CentOS-8.1.1911-x86_64-dvd1</td>
+<td align="left">magnet:?xt&#x3D;urn:btih:9DB46A612D04763AA7DB02A0FF63EDE2EA555867&amp;dn&#x3D;CentOS-8.1.1911-x86_64-dvd1.iso</td>
+</tr>
+<tr>
+<td align="center">03</td>
+<td align="left">VMware16.2.4</td>
+<td align="left"><a href="https://download3.vmware.com/software/WKST-1624-WIN/VMware-workstation-full-16.2.4-20089737.exe">https://download3.vmware.com/software/WKST-1624-WIN/VMware-workstation-full-16.2.4-20089737.exe</a></td>
+</tr>
+<tr>
+<td align="center">04</td>
+<td align="left">windows-server_2022_x64_dvd</td>
+<td align="left">ed2k:&#x2F;&#x2F;|file|zh-cn_windows_server_2022_x64_dvd_6c73507d.iso|5805221888|8D72A80C08CEFD49AB831C0AD08EE69C|&#x2F;</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>下载链接</category>
+      </categories>
+      <tags>
+        <tag>下载</tag>
+      </tags>
+  </entry>
 </search>
