@@ -234,7 +234,7 @@ badges: true
     <content><![CDATA[<table>
 <thead>
 <tr>
-<th align="center">序号</th>
+<th align="center">行</th>
 <th align="left">资源名</th>
 <th align="left">下载地址</th>
 </tr>
