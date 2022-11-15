@@ -50,8 +50,9 @@
 git branch dev
 //2.切换分支到dev
 git checkout dev
+//上面的两个步骤可以合并为一个
+git checkout -b dev
 </code></pre>
-<p>   &#x2F;&#x2F;上面的两个步骤可以合并为一个<br>    git checkout -b dev</p>
 <h3 id="23、查看当前分支"><a href="#23、查看当前分支" class="headerlink" title="23、查看当前分支"></a>23、查看当前分支</h3><pre><code>git branch
 </code></pre>
 <h3 id="24、合并指定分支到当前分支"><a href="#24、合并指定分支到当前分支" class="headerlink" title="24、合并指定分支到当前分支"></a>24、合并指定分支到当前分支</h3><pre><code>/*和并分支dev到master*/
