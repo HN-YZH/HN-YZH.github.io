@@ -188,4 +188,44 @@ badges: true
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>myBaits.md</title>
+    <url>/2022/10/31/mybatis/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>虚拟机安装Oracle连接报ora-12514的解决方法.md</title>
+    <url>/2022/11/09/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Oracle%E8%BF%9E%E6%8E%A5%E6%8A%A5ora-12514%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="解决ora-12514-无法解析指定的连接标识符"><a href="#解决ora-12514-无法解析指定的连接标识符" class="headerlink" title="解决ora-12514:无法解析指定的连接标识符"></a>解决ora-12514:无法解析指定的连接标识符</h2><p>虚拟机安装Oracle后，使用第三方软件访问数据库时频繁报ora-12514，找了很多解决方法个人认为最简单有效的方法是修改C:\app\Administrator\product\11.2.0\dbhome_1\NETWORK\ADMIN路径下的listener.ora文件</p>
+<pre><code>SID_LIST_LISTENER =
+  (SID_LIST =
+    (SID_DESC =
+      (SID_NAME = CLRExtProc)
+      (ORACLE_HOME = C:\app\Administrator\product\11.2.0\dbhome_1)
+      (PROGRAM = extproc)
+      (ENVS = &quot;EXTPROC_DLLS=ONLY:C:\app\Administrator\product\11.2.0\dbhome_1\bin\oraclr11.dll&quot;)
+    )
+    (SID_DESC=
+      (GLOBAL_DBNAME=ORCL)
+      (ORACLE_HOME = C:\app\Administrator\product\11.2.0\dbhome_1)
+      (SID_NAME=ORCL)
+    )
+  )
+</code></pre>
+<p>上面的内容中新增部分是以下内容:</p>
+<pre><code>(SID_DESC=
+  (GLOBAL_DBNAME=ORCL)
+  (ORACLE_HOME = C:\app\Administrator\product\11.2.0\dbhome_1)
+  (SID_NAME=ORCL)
+)
+</code></pre>
+]]></content>
+      <categories>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>ora-1251</tag>
+        <tag>Oracle数据库常见报错</tag>
+      </tags>
+  </entry>
 </search>
